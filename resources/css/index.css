@@ -51,7 +51,7 @@ nav{
     text-align: left;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
     a {
       display: block;
       width: 100%;
