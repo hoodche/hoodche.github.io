@@ -51,6 +51,15 @@ nav{
     text-align: left;
 }
 
+@media screen and (max-width: 600px) {
+    a {
+      display: block;
+      width: 100%;
+      background-color: #537584;
+         
+    }
+}
+
 footer {
     background-color: #144782;
     position:absolute;
