@@ -21,7 +21,10 @@
     <video src="./video/VID-20230123-WA0032.mp4" controls width="640" height="480"></video>
   </p>
 </body> -->
-<!DOCTYPE html>
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -83,6 +86,82 @@
 
       if (input === contrasenaCorrecta) {
         document.getElementById("imagen-secreta").style.display = "block";
+        document.getElementById("error").textContent = "";
+      } else {
+        document.getElementById("error").textContent = "Contraseña incorrecta.";
+      }
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso con Contraseña</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    button {
+      padding: 14px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #video-secreto {
+      display: none;
+      margin-top: 20px;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #error {
+      color: red;
+      margin-top: 15px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="pedirContrasena()">Mostrar video secreto</button>
+  <p id="error"></p>
+
+  <video id="video-secreto" controls>
+    <source src="./video/VID-20230123-WA0032.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de video.
+  </video>
+
+  <script>
+    function pedirContrasena() {
+      const contrasenaCorrecta = "clave123"; // Cámbiala por la que tú quieras
+      const input = prompt("Introduce la contraseña:");
+
+      if (input === contrasenaCorrecta) {
+        document.getElementById("video-secreto").style.display = "block";
         document.getElementById("error").textContent = "";
       } else {
         document.getElementById("error").textContent = "Contraseña incorrecta.";
