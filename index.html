@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -20,4 +20,23 @@
   <p style="text-align:center">
     <video src="./video/VID-20230123-WA0032.mp4" controls width="640" height="480"></video>
   </p>
+</body> -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>MAPA DEL TESORO</title>
+</head>
+<body>
+  <script>
+    var password = prompt("Escribe la contraseña para ver el mapa del tesoro:");
+    if (password === "12345") {
+      document.getElementById("imagen").style.display = "block";
+    } else {
+      alert("Contraseña incorrecta");
+    }
+  </script>
+
+  <img id="imagen" src="mapatesoro.png" style="display: none;" alt="Imagen protegida">
 </body>
+</html>
