@@ -95,13 +95,12 @@
 
 </body>
 </html> -->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galería vertical</title>
+  <title>Galería vertical con video</title>
   <style>
     body {
       font-family: sans-serif;
@@ -127,6 +126,14 @@
       background-color: #0056b3;
     }
 
+    #video-secreto {
+      display: none;
+      margin-bottom: 30px;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
     .galeria {
       width: 100%;
     }
@@ -149,14 +156,6 @@
       color: #333;
     }
 
-    #video-secreto {
-      display: none;
-      margin-top: 30px;
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
     #error {
       color: red;
       margin-top: 15px;
@@ -169,35 +168,35 @@
   <button onclick="pedirContrasena()">Mostrar video secreto</button>
   <p id="error"></p>
 
-  <!-- Galería vertical con imágenes al 100% -->
-  <div class="galeria">
-    <div class="foto">
-      <img src="./pics/posicion1.PNG" alt="Foto 1">
-      <div class="titulo-foto">Primer Número</div>
-    </div>
-    <div class="foto">
-      <img src="./pics/posicion1.PNG" alt="Foto 2">
-      <div class="titulo-foto">Segundo Número</div>
-    </div>
-    <div class="foto">
-      <img src="./pics/posicion1.PNG" alt="Foto 3">
-      <div class="titulo-foto">Tercer Número</div>
-    </div>
-    <div class="foto">
-      <img src="./pics/posicion1.PNG" alt="Foto 4">
-      <div class="titulo-foto">Cuarto Número</div>
-    </div>
-  </div>
-
-  <!-- Video oculto -->
+  <!-- Video oculto (ahora está arriba de la galería) -->
   <video id="video-secreto" controls>
     <source src="./video/VID-20230123-WA0032.mp4" type="video/mp4">
     Tu navegador no soporta la reproducción de video.
   </video>
 
+  <!-- Galería de imágenes al 100% -->
+  <div class="galeria">
+    <div class="foto">
+      <img src="./pics/posicion1.PNG" alt="Foto 1">
+      <div class="titulo-foto">Primera letra o número</div>
+    </div>
+    <div class="foto">
+      <img src="./pics/posicion1.PNG" alt="Foto 2">
+      <div class="titulo-foto">Segunda letra o número</div>
+    </div>
+    <div class="foto">
+      <img src="./pics/posicion1.PNG" alt="Foto 3">
+      <div class="titulo-foto">Tercera letra o número</div>
+    </div>
+    <div class="foto">
+      <img src="./pics/posicion1.PNG" alt="Foto 4">
+      <div class="titulo-foto">Cuarta letra o número</div>
+    </div>
+  </div>
+
   <script>
     function pedirContrasena() {
-      const contrasenaCorrecta = "1234";
+      const contrasenaCorrecta = "1234"; // Cambia por la tuya
       const input = prompt("Introduce la contraseña:");
 
       if (input === contrasenaCorrecta) {
@@ -211,5 +210,3 @@
 
 </body>
 </html>
-
-
