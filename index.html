@@ -101,16 +101,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galería con acceso</title>
+  <title>Galería vertical</title>
   <style>
     body {
       font-family: sans-serif;
       margin: 0;
       padding: 20px;
       background-color: #f0f0f0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       text-align: center;
     }
 
@@ -131,22 +128,30 @@
     }
 
     .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 10px;
       width: 100%;
-      max-width: 500px;
     }
 
-    .galeria img {
+    .foto {
+      margin-bottom: 20px;
+    }
+
+    .foto img {
       width: 100%;
+      height: auto;
+      display: block;
       border-radius: 10px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
+    .titulo-foto {
+      margin-top: 8px;
+      font-size: 16px;
+      color: #333;
+    }
+
     #video-secreto {
       display: none;
-      margin-top: 20px;
+      margin-top: 30px;
       max-width: 100%;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -164,23 +169,35 @@
   <button onclick="pedirContrasena()">Mostrar video secreto</button>
   <p id="error"></p>
 
-  <!-- Galería de 4 fotos visibles -->
+  <!-- Galería vertical con imágenes al 100% -->
   <div class="galeria">
-    <img src="./pics/posicion1.PNG" alt="Foto 1">
-    <img src="./pics/posicion1.PNG" alt="Foto 2">
-    <img src="./pics/posicion1.PNG" alt="Foto 3">
-    <img src="./pics/posicion1.PNG" alt="Foto 4">
+    <div class="foto">
+      <img src="foto1.jpg" alt="Foto 1">
+      <div class="titulo-foto">Nombre 1</div>
+    </div>
+    <div class="foto">
+      <img src="foto2.jpg" alt="Foto 2">
+      <div class="titulo-foto">Nombre 2</div>
+    </div>
+    <div class="foto">
+      <img src="foto3.jpg" alt="Foto 3">
+      <div class="titulo-foto">Nombre 3</div>
+    </div>
+    <div class="foto">
+      <img src="foto4.jpg" alt="Foto 4">
+      <div class="titulo-foto">Nombre 4</div>
+    </div>
   </div>
 
-  <!-- Video oculto que se muestra con contraseña -->
+  <!-- Video oculto -->
   <video id="video-secreto" controls>
-    <source src="./video/VID-20230131-WA0033.mp4" type="video/mp4">
+    <source src="ruta-a-tu-video.mp4" type="video/mp4">
     Tu navegador no soporta la reproducción de video.
   </video>
 
   <script>
     function pedirContrasena() {
-      const contrasenaCorrecta = "12"; // Cambia esto por tu contraseña real
+      const contrasenaCorrecta = "clave123";
       const input = prompt("Introduce la contraseña:");
 
       if (input === contrasenaCorrecta) {
@@ -194,4 +211,5 @@
 
 </body>
 </html>
+
 
