@@ -96,13 +96,12 @@
 </body>
 </html> -->
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acceso con Contraseña</title>
+  <title>Galería con acceso</title>
   <style>
     body {
       font-family: sans-serif;
@@ -124,10 +123,25 @@
       color: white;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      margin-bottom: 20px;
     }
 
     button:hover {
       background-color: #0056b3;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .galeria img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
     #video-secreto {
@@ -135,7 +149,7 @@
       margin-top: 20px;
       max-width: 100%;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     #error {
@@ -150,14 +164,23 @@
   <button onclick="pedirContrasena()">Mostrar video secreto</button>
   <p id="error"></p>
 
+  <!-- Galería de 4 fotos visibles -->
+  <div class="galeria">
+    <img src="./pics/posicion1.PNG" alt="Foto 1">
+    <img src="./pics/posicion1.PNG" alt="Foto 2">
+    <img src="./pics/posicion1.PNG" alt="Foto 3">
+    <img src="./pics/posicion1.PNG" alt="Foto 4">
+  </div>
+
+  <!-- Video oculto que se muestra con contraseña -->
   <video id="video-secreto" controls>
-    <source src="./video/VID-20230123-WA0032.mp4" type="video/mp4">
+    <source src="./video/VID-20230131-WA0033.mp4" type="video/mp4">
     Tu navegador no soporta la reproducción de video.
   </video>
 
   <script>
     function pedirContrasena() {
-      const contrasenaCorrecta = "clave123"; // Cámbiala por la que tú quieras
+      const contrasenaCorrecta = "12"; // Cambia esto por tu contraseña real
       const input = prompt("Introduce la contraseña:");
 
       if (input === contrasenaCorrecta) {
@@ -171,3 +194,4 @@
 
 </body>
 </html>
+
