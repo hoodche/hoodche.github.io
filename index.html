@@ -25,19 +25,45 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>MAPA DEL TESORO</title>
+  <title>Acceso con Contraseña</title>
+  <style>
+    #imagen-secreta {
+      display: none;
+      margin-top: 20px;
+      max-width: 300px;
+    }
+
+    #error {
+      color: red;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <img id="imagen" src="./pics/mapatesoro.PNG" style="display: none;" alt="Imagen protegida">
+
+  <button onclick="pedirContrasena()">Mostrar imagen secreta</button>
+  <p id="error"></p>
+  <img id="imagen-secreta" src="ruta-a-tu-imagen.jpg" alt="Imagen secreta">
+
   <script>
-    var password = prompt("Escribe la contraseña para ver el mapa del tesoro:");
-    if (password === "12345") {
-      document.getElementById("imagen").style.display = "block";
-    } else {
-      alert("Contraseña incorrecta");
+    function pedirContrasena() {
+      const contrasenaCorrecta = "clave123"; // Cambia esto por tu contraseña
+      const input = prompt("Introduce la contraseña:");
+
+      if (input === contrasenaCorrecta) {
+        document.getElementById("imagen-secreta").style.display = "block";
+        document.getElementById("error").textContent = "";
+      } else {
+        document.getElementById("error").textContent = "Contraseña incorrecta.";
+      }
     }
   </script>
 
-  
 </body>
 </html>
