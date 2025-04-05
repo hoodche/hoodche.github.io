@@ -168,6 +168,12 @@
   <button onclick="pedirContrasena()">¡¡¡¡ quiero saber dónde está el tesoro !!!!</button>
   <p id="error"></p>
 
+<!-- Add this new error video element -->
+  <video id="error-video" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 100; max-width: 80%;" controls>
+    <source src="./video/VID_20230208_141439.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de video.
+  </video>
+
   <!-- Video oculto (ahora está arriba de la galería) -->
   <video id="video-secreto" controls>
     <source src="./video/VID-20230123-WA0032.mp4" type="video/mp4">
@@ -219,7 +225,20 @@
         document.getElementById("video-secreto").style.display = "block";
         document.getElementById("error").textContent = "";
       } else {
-        document.getElementById("error").textContent = "Contraseña incorrecta.";
+            // Clear any text error
+        document.getElementById("error").textContent = "";
+        
+        // Show error video
+        const errorVideo = document.getElementById("error-video");
+        errorVideo.style.display = "block";
+        errorVideo.play();
+        
+        // Hide video after 3 seconds
+        setTimeout(function() {
+          errorVideo.pause();
+          errorVideo.currentTime = 0;
+          errorVideo.style.display = "none";
+        }, 9000);
       }
     }
   </script>
