@@ -19,17 +19,7 @@ async function pedirContrasena() {
       videoSecreto.play();
       document.getElementById("error").textContent = "";
     } else {
-      document.getElementById("error").textContent = "";
-      
-      const errorVideo = document.getElementById("error-video");
-      errorVideo.style.display = "block";
-      errorVideo.play();
-      
-      setTimeout(function() {
-        errorVideo.pause();
-        errorVideo.currentTime = 0;
-        errorVideo.style.display = "none";
-      }, 28000);
+      document.getElementById("error").textContent = "Contraseña incorrecta. Inténtalo de nuevo.";
     }
   }
 } 
