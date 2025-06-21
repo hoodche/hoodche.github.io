@@ -111,32 +111,7 @@
     </div>
   </div>  
 
-  <script>
-    function pedirContrasena() {
-      const contrasenaCorrecta = "PELOTA"; // Cambia por la tuya
-      const input = prompt("pon la contraseña:");
-
-      if (input === contrasenaCorrecta) {
-        document.getElementById("video-secreto").style.display = "block";
-        document.getElementById("error").textContent = "";
-      } else {
-            // Clear any text error
-        document.getElementById("error").textContent = "";
-        
-        // Show error video
-        const errorVideo = document.getElementById("error-video");
-        errorVideo.style.display = "block";
-        errorVideo.play();
-        
-        // Hide video after 3 seconds
-        setTimeout(function() {
-          errorVideo.pause();
-          errorVideo.currentTime = 0;
-          errorVideo.style.display = "none";
-        }, 28000);
-      }
-    }
-  </script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>
