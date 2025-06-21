@@ -7,7 +7,7 @@ async function digestMessage(message) {
 }
 
 async function pedirContrasena() {
-  const contrasenaCorrectaHash = "c34b6e82a357c32a4332997f81a5a1f253725f46452a23395c898517ea0d27a4"; // SHA-256 of "LOMITA"
+  const contrasenaCorrectaHash = "87129e1b1d2870c5e6743b81bcae28ec83c27fc660e4ba78d95d00d2bfc0afdb";
   const errorElement = document.getElementById("error");
   const videoSecreto = document.getElementById("video-secreto");
 
