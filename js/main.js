@@ -9,22 +9,21 @@ async function digestMessage(message) {
 async function pedirContrasena() {
   const contrasenaCorrectaHash = "c34b6e82a357c32a4332997f81a5a1f253725f46452a23395c898517ea0d27a4"; // SHA-256 of "LOMITA"
   const errorElement = document.getElementById("error");
-  errorElement.textContent = ""; // Clear previous errors
+  const videoSecreto = document.getElementById("video-secreto");
 
+  errorElement.textContent = "";
   const input = prompt("pon la contraseña:");
 
   if (input === null) {
-    // User cancelled the prompt, do nothing or show a message
     return;
   }
 
   const inputHash = await digestMessage(input.toUpperCase());
 
   if (inputHash === contrasenaCorrectaHash) {
-    const videoSecreto = document.getElementById("video-secreto");
     videoSecreto.style.display = "block";
     videoSecreto.play();
   } else {
     errorElement.textContent = "Contraseña incorrecta. Inténtalo de nuevo";
   }
-} 
+}
