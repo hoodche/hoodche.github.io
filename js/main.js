@@ -10,6 +10,7 @@ async function pedirContrasena() {
   const contrasenaCorrectaHash = "87129e1b1d2870c5e6743b81bcae28ec83c27fc660e4ba78d95d00d2bfc0afdb";
   const errorElement = document.getElementById("error");
   const videoSecreto = document.getElementById("video-secreto");
+  const youtubeVideo = document.getElementById("youtube-video");
 
   errorElement.textContent = "";
   const input = prompt("pon la contraseña:");
@@ -21,8 +22,9 @@ async function pedirContrasena() {
   const inputHash = await digestMessage(input.toUpperCase());
 
   if (inputHash === contrasenaCorrectaHash) {
+    // Set your YouTube embed URL here
+    youtubeVideo.src = "YOUR_YOUTUBE_EMBED_URL_HERE";
     videoSecreto.style.display = "block";
-    videoSecreto.play();
   } else {
     errorElement.textContent = "Contraseña incorrecta. Inténtalo de nuevo";
   }
