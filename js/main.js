@@ -23,7 +23,7 @@ async function pedirContrasena() {
 
   if (inputHash === contrasenaCorrectaHash) {
     // Set your YouTube embed URL here
-    youtubeVideo.src = "https://www.youtube.com/embed/HFojlF1wS2o?si=JiYBslyphxdfC-T-";
+    youtubeVideo.src="https://www.youtube.com/embed/HFojlF1wS2o?si=vSTF8Yf0lakx3JEp";
     videoSecreto.style.display = "block";
   } else {
     errorElement.textContent = "Contraseña incorrecta. Inténtalo de nuevo";
